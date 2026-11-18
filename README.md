@@ -1,4 +1,5 @@
 url = https://mediconnectbackend-icd4.onrender.com/
+check Health = https://mediconnectbackend-icd4.onrender.com/api/health
 
 
 
