@@ -1,3 +1,8 @@
+url = https://mediconnectbackend-icd4.onrender.com/
+
+
+
+
 From hospital-backend, run npm run db:indexes if you haven’t run the schema migration, then npm run seed:admin. I updated seedAdmin.js so it creates or promotes the MongoDB admin without requiring a password.
 
 
