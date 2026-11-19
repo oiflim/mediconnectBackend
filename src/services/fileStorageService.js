@@ -9,7 +9,7 @@ export async function uploadMedicalFile(file) {
   if (!imagekit) throw unavailable('ImageKit storage is not configured; set IMAGEKIT_PRIVATE_KEY and IMAGEKIT_URL_ENDPOINT');
   const fileName = `${Date.now()}-${file.originalname.replace(/[^a-zA-Z0-9._-]/g, '_')}`;
   const uploaded = await imagekit.files.upload({
-    file: await toFile(file.buffer, fileName),
+    file: await toFile(file.buffer, fileName, { type: file.mimetype }),
     fileName,
     folder: process.env.IMAGEKIT_UPLOAD_FOLDER || '/mediconnect/medical-records',
     useUniqueFileName: true,

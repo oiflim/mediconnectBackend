@@ -43,6 +43,7 @@ export async function verifyClerkSessionToken(token) {
     }));
   } catch (error) {
     if (error?.code?.startsWith("ERR_JWT") || error?.code?.startsWith("ERR_JWS")) {
+      console.warn("Clerk session verification failed:", error.code);
       throw unauthorized("Clerk session is invalid or expired");
     }
     throw unavailable("Unable to verify the Clerk session");
